@@ -1,0 +1,263 @@
+@font-face {
+  font-family: "Gilroy-Extrabold";
+  src: url(../Fonts/Gilroy-ExtraBold.ttf);
+}
+@font-face {
+  font-family: "Gilroy-bold";
+  src: url(../Fonts/Gilroy-Bold.ttf);
+}
+@font-face {
+  font-family: "Gilroy-semibold";
+  src: url(../Fonts/Gilroy-SemiBold.ttf);
+}
+@font-face {
+  font-family: "Mark pro medium";
+  src: url(../Fonts/FontFont_FF.Mark.Pro.Medium.otf);
+}
+@font-face {
+  font-family: "Mark pro bold";
+  src: url(../Fonts/FontFont_FF.Mark.Pro.Bold.otf);
+}
+:root {
+  --body-background: #f8f9fd;
+  --headline-: #0d1120;
+  --subheadline-: #636370;
+  --inputText-: #404048;
+  --inputText-: #404048;
+  --calculate-text: #fdfdfd;
+  --calculateButton-background: linear-gradient(
+    92.27deg,
+    #2573ff 31.47%,
+    #25cbff 132.53%
+  );
+}
+*,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--body-background);
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding-top: 70px;
+}
+/* main-containre */
+#Main-headline,
+#OutputHeading {
+  padding: 0px 30px;
+  color: var(--headline-);
+  text-align: center;
+  font-size: 40px;
+  line-height: 54px;
+  letter-spacing: 1.5px;
+  font-family: "Gilroy-semibold", sans-serif;
+  margin-bottom: 40px;
+}
+#user-input-column {
+  padding: 0px 30px;
+  padding-bottom: 35px;
+}
+label {
+  display: block;
+  font-size: 20;
+  font-family: "Mark pro medium", sans-serif;
+  color: var(--subheadline-);
+  margin-bottom: 18px;
+}
+.input-group {
+  margin-bottom: 40px;
+}
+
+.userInputBox,
+input[type="text"] {
+  width: 100%;
+  height: 53px;
+  padding: 15px 20px;
+  padding-bottom: 0px;
+  background-color: white;
+  border-radius: 14px;
+  outline: none;
+  outline-offset: 0px;
+  border: solid 0.2px rgba(0, 0, 0, 0.246);
+  box-shadow: 0px 5px 80px rgba(217, 218, 219, 0.616);
+}
+input[type="text"] {
+  padding-bottom: 10px;
+  transition: all 0.5s ease;
+}
+input[type="text"]:focus {
+  border: solid 0.5px #2572ff;
+}
+.textstyle,
+input[type="text"] {
+  font-family: "Mark pro medium", sans-serif;
+  font-size: 18px;
+  color: var(--inputText-);
+}
+#mark {
+  float: right;
+  margin-top: -20px;
+  color: var(--inputText-);
+}
+input {
+  width: 100%;
+}
+input[type="range"],
+[type="text"] {
+  height: 3.5px;
+  cursor: pointer;
+
+  /* margin-bottom: -20px; */
+}
+
+#CalculatetionButton,
+#RecalculatetionButton {
+  padding: 14px 20px;
+  width: 100%;
+  height: fit-content;
+  border-radius: 14px;
+  outline-offset: 0px;
+  outline: none;
+  cursor: pointer;
+
+  color: var(--calculate-text);
+  font-size: 21px;
+  font-family: "Mark pro bold", sans-serif;
+}
+#CalculatetionButton {
+  background: linear-gradient(92.27deg, #2573ff 31.47%, #25cbff 132.53%);
+  border: 2px solid #d3e9ff;
+}
+
+#OutputHeading {
+  color: var(--calculate-text);
+}
+.lifetime-result-coloumn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(157.42deg, #0d1120 8.38%, #070f33 105.34%);
+}
+#finalOutputZone span {
+  color: white;
+}
+#finalOutputZone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border-radius: 50%;
+  border: double 8px transparent;
+  background-image: linear-gradient(#0d1120, #0d1120),
+    linear-gradient(106.44deg, #2573ff -7.11%, rgba(37, 115, 255, 0) 135.79%);
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+.inner-box-top {
+  padding: 50px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.inner-box-top span {
+  font-family: "Gilroy-Extrabold";
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+.inner-box-bottom {
+  width: 100%;
+  padding: 40px 30px;
+  background-color: white;
+  border-radius: 33px 33px 0px 0px;
+}
+.list-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0px;
+}
+.subtext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 17px;
+  color: var(--subheadline-);
+}
+.subtext,
+.tstyle {
+  font-family: "Mark pro medium";
+}
+.tstyle {
+  font-size: 17px;
+  color: rgb(34, 34, 34);
+}
+.subtext svg {
+  margin-right: 17px;
+}
+#RecalculatetionButton {
+  margin-top: 30px;
+  background-color: #0d1120;
+  border: 1px solid rgb(155, 155, 155);
+}
+
+/* desktop resposnive starts */
+@media (min-width: 900px) {
+  body {
+    padding: 100px 120px;
+  }
+  #Main-headline {
+    padding: 0px 30px;
+    text-align: center;
+    font-size: 55px;
+    line-height: 54px;
+    letter-spacing: 1.5px;
+    font-family: "Gilroy-Extrabold";
+    margin-bottom: 80px;
+  }
+  #OutputHeading {
+    width: 380px;
+    text-align: center;
+  }
+  .inner-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  #user-input-column {
+    width: 40%;
+    background: #ffffff;
+    /* Body Text / Color -4 */
+    padding: 50px;
+    padding-bottom: 0px;
+
+    border: 0.1px solid #c1c1cab4;
+    box-sizing: border-box;
+    box-shadow: inset 0px 4px 56px rgba(0, 107, 230, 0.04);
+    backdrop-filter: blur(30px);
+    border-radius: 37px;
+  }
+  .lifetime-result-coloumn {
+    width: 40%;
+    border-radius: 37px;
+  }
+  .inner-box-bottom {
+    width: 100%;
+    padding: 40px 50px;
+    border-radius: 33px;
+  }
+  .input-group {
+    margin-bottom: 60px;
+  }
+}
+/* @media (min-width: 680px); */
