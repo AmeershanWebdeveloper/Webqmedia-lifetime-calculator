@@ -58,7 +58,8 @@ body {
 }
 #user-input-column {
   padding: 0px 30px;
-  padding-bottom: 35px;
+  padding-bottom: 30px;
+  z-index: 5;
 }
 label {
   display: block;
@@ -122,14 +123,22 @@ input[type="range"],
   outline-offset: 0px;
   outline: none;
   cursor: pointer;
-
   color: var(--calculate-text);
   font-size: 21px;
   font-family: "Mark pro bold", sans-serif;
+  transition: all 0.5s ease-in-out;
 }
+
 #CalculatetionButton {
   background: linear-gradient(92.27deg, #2573ff 31.47%, #25cbff 132.53%);
   border: 2px solid #d3e9ff;
+}
+
+#RecalculatetionButton:hover {
+  transform: scale(0.97);
+}
+#CalculatetionButton:hover {
+  transform: scale(0.97);
 }
 
 #OutputHeading {
@@ -141,6 +150,16 @@ input[type="range"],
   align-items: center;
   flex-direction: column;
   background: linear-gradient(157.42deg, #0d1120 8.38%, #070f33 105.34%);
+  animation: mymoveright 1s ease-in-out;
+  z-index: 0;
+}
+@keyframes mymoveright {
+  from {
+    transform: translateY(400px);
+  }
+  to {
+    transform: translateY(0px);
+  }
 }
 #finalOutputZone span {
   color: white;
@@ -266,4 +285,15 @@ input[type="range"],
     margin-bottom: 60px;
   }
 }
-/* @media (min-width: 680px); */
+@media (min-width: 670px) {
+  body {
+    padding: 50px 100px;
+  }
+  .lifetime-result-coloumn {
+    border-radius: 37px;
+  }
+  .inner-box-bottom {
+    padding: 40px 50px;
+    border-radius: 33px;
+  }
+}

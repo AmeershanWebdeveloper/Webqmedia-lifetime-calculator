@@ -82,3 +82,45 @@ form.addEventListener("reset", () => {
   numberOfReferenceResult.innerHTML = 0;
   finalResult.innerHTML = "₹" + "0000";
 });
+
+// js responsive starts
+
+var userInputColumn = document.querySelector("#user-input-column");
+var mainHeadline = document.querySelector("#Main-headline");
+var lifetimeResultColoumn = document.querySelector(".lifetime-result-coloumn");
+function Mobileresponsive(x) {
+  if (x.matches) {
+    lifetimeResultColoumn.style.display = "none";
+    form.addEventListener("submit", () => {
+      lifetimeResultColoumn.style.display = "inline-block";
+      userInputColumn.style.display = "none";
+      mainHeadline.style.display = "none";
+      document.body.style.paddingTop = "0px";
+    });
+    form.addEventListener("reset", () => {
+      lifetimeResultColoumn.style.display = "none";
+      userInputColumn.style.display = "block";
+      mainHeadline.style.display = "inline-block";
+      document.body.style.paddingTop = "70px";
+    });
+  } else {
+    lifetimeResultColoumn.style.display = "inline-block";
+    mainHeadline.style.display = "block";
+    form.addEventListener("submit", () => {
+      lifetimeResultColoumn.style.display = "inline-block";
+      userInputColumn.style.display = "block";
+      mainHeadline.style.display = "block";
+      document.body.style.paddingTop = "70px";
+    });
+    form.addEventListener("reset", () => {
+      lifetimeResultColoumn.style.display = "block";
+      userInputColumn.style.display = "block";
+      mainHeadline.style.display = "block";
+      document.body.style.paddingTop = "70px";
+    });
+  }
+}
+
+var x = window.matchMedia("(max-width: 700px)");
+Mobileresponsive(x);
+x.addListener(Mobileresponsive);
