@@ -198,8 +198,14 @@ input[type="range"],
   font-family: "Mark pro medium";
 }
 .tstyle {
-  font-size: 17px;
-  color: rgb(34, 34, 34);
+  font-family: "Mark pro bold";
+  font-size: 18px;
+  color: rgb(3, 3, 3);
+  margin-left: 10px;
+}
+.mark {
+  color: #636370;
+  font-family: "Mark pro medium";
 }
 .subtext svg {
   margin-right: 17px;

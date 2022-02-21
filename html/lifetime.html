@@ -16,12 +16,12 @@
             <form id="costumer-lifetime-calculation-form">
               <div class="input-group">
                 <label class="label" for="name">Avarage purchase value</label>
-                <input type="text" name="AvgPurchase" id="AvgPurchaseValue"  />
+                <input type="text" name="AvgPurchase" id="AvgPurchaseValue" required  />
               </div>
               <div class="input-group">
                 <label for="name">Profit Margin</label>
                 <div class="userInputBox">
-                  <p  class="ProfitMarginOutput textstyle">0</p>
+                  <p  id="profit-marginOutput" class="ProfitMarginOutput textstyle">0</p>
                   <span id="mark">%</span>
                   <input
                   type="range"
@@ -39,10 +39,14 @@
               <div class="input-group">
                 <label class="label" for="name">Returns per years</label>
                 <div class="userInputBox">
-                  <p class="ReturnsPerYearOutput textstyle">50</p>
+                  <p id="ReturnsPerYearOutput" class="textstyle">1</p>
                   <input
                   type="range"
                   name="ReturnPerYear"
+                  min="1"
+                  max="12"
+                  step="1"
+                  value="1"
                   id="ReturnPerYearInput"
                   class="inputRange"
                 />
@@ -52,11 +56,15 @@
               <div class="input-group">
                 <label class="label" for="name">Customer terms in years</label>
                 <div class="userInputBox">
-                  <p class="CsTermsInYearOutput  textstyle">50</p>
+                  <p id="CsTermsInYearOutput" class="textstyle">1</p>
                  
                   <input
                   type="range"
                   name="CustomerTermsInYears"
+                  min="1"
+                  max="10"
+                  step="1"
+                  value="1"
                   id="CsTermsInYearInput"
                   class="inputRange"
                 />
@@ -66,11 +74,15 @@
               <div class="input-group">
                 <label for="name" class="label">Number of reference</label>
                 <div class="userInputBox">
-                  <p class="NumberOfReferenceOutput  textstyle">50</p>
+                  <p id="NumberOfReferenceOutput" class="textstyle">0.1</p>
                  
                   <input
                   type="range"
                   name="NumberOfReference"
+                  min="0.1"
+                  max="2"
+                  step="0.1"
+                  value="0.1"
                   id="NumberOfReferenceInput"
                   class="inputRange"
                 />
@@ -91,7 +103,7 @@
             <div class="inner-box-top">
               <h2 id="OutputHeading">Customer Lifetime value</h2>
               <div id="finalOutputZone">
-                <span>₹15000</span>
+                <span id="finalResult">₹0000</span>
               </div>
             </div>
             <div class="inner-box-bottom">
@@ -102,7 +114,7 @@
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 21.882 2.118 24 12 24C21.882 24 24 21.882 24 12C24 2.118 21.882 0 12 0C2.118 0 0 2.118 0 12ZM16.7071 8.29289C17.0976 8.68342 17.0976 9.31658 16.7071 9.70711L11.7071 14.7071C11.3166 15.0976 10.6834 15.0976 10.2929 14.7071L7.79289 12.2071C7.40237 11.8166 7.40237 11.1834 7.79289 10.7929C8.18342 10.4024 8.81658 10.4024 9.20711 10.7929L11 12.5858L15.2929 8.29289C15.6834 7.90237 16.3166 7.90237 16.7071 8.29289Z" fill="#005AE1"/>
                       </svg>
                       Avarage purchase</div>
-                      <span class="mark"> ₹<span class="AvgPurchaseValueOutput  tstyle">65000</span></span>
+                      <span class="mark"> ₹<span id="AvgPurchaseValueResult" class="tstyle">0</span></span>
                 </div>
                 <div class="list-row">
                   <div class="subtext">
@@ -110,7 +122,7 @@
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 21.882 2.118 24 12 24C21.882 24 24 21.882 24 12C24 2.118 21.882 0 12 0C2.118 0 0 2.118 0 12ZM16.7071 8.29289C17.0976 8.68342 17.0976 9.31658 16.7071 9.70711L11.7071 14.7071C11.3166 15.0976 10.6834 15.0976 10.2929 14.7071L7.79289 12.2071C7.40237 11.8166 7.40237 11.1834 7.79289 10.7929C8.18342 10.4024 8.81658 10.4024 9.20711 10.7929L11 12.5858L15.2929 8.29289C15.6834 7.90237 16.3166 7.90237 16.7071 8.29289Z" fill="#005AE1"/>
                       </svg>
                       Profit margin</div>
-                      <span class="mark"> ₹<span class="ProfitMarginOutput  tstyle">50</span></span>
+                      <span class="mark"> <span id="ProfitMarginResult" class="tstyle">0</span></span>
                 </div>
                 <div class="list-row">
                   <div class="subtext">
@@ -118,7 +130,7 @@
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 21.882 2.118 24 12 24C21.882 24 24 21.882 24 12C24 2.118 21.882 0 12 0C2.118 0 0 2.118 0 12ZM16.7071 8.29289C17.0976 8.68342 17.0976 9.31658 16.7071 9.70711L11.7071 14.7071C11.3166 15.0976 10.6834 15.0976 10.2929 14.7071L7.79289 12.2071C7.40237 11.8166 7.40237 11.1834 7.79289 10.7929C8.18342 10.4024 8.81658 10.4024 9.20711 10.7929L11 12.5858L15.2929 8.29289C15.6834 7.90237 16.3166 7.90237 16.7071 8.29289Z" fill="#005AE1"/>
                       </svg>
                       Returns per year</div>
-                      <span class="mark"> ₹<span class="ReturnsPerYearOutput  tstyle">50</span></span>
+                      <span class="mark"> <span id="ReturnsPerYearResult" class="tstyle">0</span></span>
                 </div>
                 <div class="list-row">
                   <div class="subtext">
@@ -126,7 +138,7 @@
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 21.882 2.118 24 12 24C21.882 24 24 21.882 24 12C24 2.118 21.882 0 12 0C2.118 0 0 2.118 0 12ZM16.7071 8.29289C17.0976 8.68342 17.0976 9.31658 16.7071 9.70711L11.7071 14.7071C11.3166 15.0976 10.6834 15.0976 10.2929 14.7071L7.79289 12.2071C7.40237 11.8166 7.40237 11.1834 7.79289 10.7929C8.18342 10.4024 8.81658 10.4024 9.20711 10.7929L11 12.5858L15.2929 8.29289C15.6834 7.90237 16.3166 7.90237 16.7071 8.29289Z" fill="#005AE1"/>
                       </svg>
                       Customer terms in years</div>
-                      <span class="mark"> ₹<span class="CsTermsInYearOutput  tstyle">50</span></span>
+                      <span class="mark"> <span id="CsTermsInYearResult" class=" tstyle">0</span></span>
                 </div>
                 <div class="list-row">
                   <div class="subtext">
@@ -134,7 +146,7 @@
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M0 12C0 21.882 2.118 24 12 24C21.882 24 24 21.882 24 12C24 2.118 21.882 0 12 0C2.118 0 0 2.118 0 12ZM16.7071 8.29289C17.0976 8.68342 17.0976 9.31658 16.7071 9.70711L11.7071 14.7071C11.3166 15.0976 10.6834 15.0976 10.2929 14.7071L7.79289 12.2071C7.40237 11.8166 7.40237 11.1834 7.79289 10.7929C8.18342 10.4024 8.81658 10.4024 9.20711 10.7929L11 12.5858L15.2929 8.29289C15.6834 7.90237 16.3166 7.90237 16.7071 8.29289Z" fill="#005AE1"/>
                       </svg>
                       Number of reference</div>
-                      <span class="mark"> ₹<span class="NumberOfReferenceOutput tstyle">50</span></span>
+                      <span class="mark"> <span id="NumberOfReferenceResult" class="tstyle">0</span></span>
                 </div>
                
               </div>
@@ -147,11 +159,13 @@
                 />
               </div>
             </div>
-          </div>
-        </form>
+          </form>
+           </div>
         </div>
       </div>
     </section>
-  <script src="/abc.js"></script>
+  <script src="liftetime.js">
+    
+  </script>
   </body>
 </html>
