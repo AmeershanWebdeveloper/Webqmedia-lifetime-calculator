@@ -21,14 +21,14 @@
               <div class="input-group">
                 <label for="name">Profit Margin</label>
                 <div class="userInputBox">
-                  <p  id="abc" class="ProfitMarginOutput textstyle">df</p>
+                  <p  class="ProfitMarginOutput textstyle">0</p>
                   <span id="mark">%</span>
                   <input
                   type="range"
-                  min="1"
-                  max="12"
+                  min="0"
+                  max="100"
                   step="1"
-                  value="0"
+                  value="1"
                   name="number"
                   id="ProfitMarginInput"
                   class="inputRange"
@@ -152,11 +152,6 @@
         </div>
       </div>
     </section>
-    <script>
-      var inputm=document.getElementById("ProfitMarginInput");
- inputm.addEventListener("input",()=>{
-   document.getElementById("abc").innerHTML=inputm.value;
- })
-    </script>
+  <script src="/abc.js"></script>
   </body>
 </html>
