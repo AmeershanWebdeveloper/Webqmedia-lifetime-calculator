@@ -61,10 +61,13 @@ form.addEventListener("submit", (event) => {
 
   finalResult.innerHTML =
     "₹" +
-    ((Number(avgPurchaseValue.value) * Number(profitMarginInput.value)) / 100) *
-      Number(returnPerYearInput.value) *
-      Number(csTermsInYearInput.value) *
-      (Number(numberOfReferenceInput.value) + 1);
+    Math.round(
+      ((Number(avgPurchaseValue.value) * Number(profitMarginInput.value)) /
+        100) *
+        Number(returnPerYearInput.value) *
+        Number(csTermsInYearInput.value) *
+        (Number(numberOfReferenceInput.value) + 1)
+    );
 });
 
 form.addEventListener("reset", () => {
@@ -77,5 +80,5 @@ form.addEventListener("reset", () => {
   returnsPerYearResultt.innerHTML = 0;
   csTermsInYearResult.innerHTML = 0;
   numberOfReferenceResult.innerHTML = 0;
-  finalResult.innerHTML = 0000;
+  finalResult.innerHTML = "₹" + "0000";
 });
