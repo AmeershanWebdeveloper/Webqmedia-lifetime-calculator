@@ -101,10 +101,12 @@ function Mobileresponsive(x) {
       lifetimeResultColoumn.style.display = "none";
       userInputColumn.style.display = "block";
       mainHeadline.style.display = "inline-block";
-      document.body.style.paddingTop = "70px";
+      document.body.style.paddingTop = "0px";
     });
   } else {
     lifetimeResultColoumn.style.display = "inline-block";
+    userInputColumn.style.display = "block";
+
     mainHeadline.style.display = "block";
     form.addEventListener("submit", () => {
       lifetimeResultColoumn.style.display = "inline-block";
